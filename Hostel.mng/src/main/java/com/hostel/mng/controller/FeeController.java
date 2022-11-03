@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hostel.mng.model.Allotment;
 import com.hostel.mng.model.Fee;
-import com.hostel.mng.repository.AllotmentRepository;
 import com.hostel.mng.repository.FeeRepository;
-
 import com.hostel.mng.service.FeeService;
 
 @Controller
@@ -47,6 +44,7 @@ public class FeeController {
 			@RequestParam("paidfee") String paidfee,
 			@RequestParam("remainingfee") String remainingfee,
 			ModelMap modelMap) throws ParseException{
+		
 		
 		feeService.addFee(firstName, email, roomNo, totalfee, paidfee, remainingfee, modelMap);
 		return "feeAdd";
